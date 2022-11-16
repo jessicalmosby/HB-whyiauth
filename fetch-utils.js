@@ -24,12 +24,12 @@ export async function signInUser(email, password) {
 }
 
 export async function checkAuth() {
-    const user = getUser();
+    const user = await getUser();
     if (!user) location.replaced('/');
 }
 
 export async function redirectIfLoggedIn() {
-    const user = getUser();
+    const user = await getUser();
     if (user) location.replace('./other-page');
 }
 
